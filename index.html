@@ -231,14 +231,29 @@
     padding: 2rem 1rem;
   }
 }
+ @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
 
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+    }
   </style>
 </head>
 <body>
-
- <nav>
-  <img src="las hormigas (1).png" alt="Logo Las Hormigas">
-  <ul>
+  <nav>
+    <img src="las hormigas (1).png" alt="Las Hormigas Logo">
+    <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('show')">☰</button>
+    <ul>
     <li><a href="#">Inicio</a></li>
     <li><a href="#quienes">¿Quiénes somos?</a></li>
     <li><a href="#lineas">Líneas de acción</a></li>
@@ -247,8 +262,8 @@
       <a href="index-en.html" style="font-weight: 500; font-size: 0.9rem; opacity: 0.7;" title="View in English">🇨🇦 EN</a>
     </li>
   </ul>
-</nav>
-
+  </nav>
+ 
   <header>
     <div class="ants">
       <div class="ant">🐜</div>
@@ -331,6 +346,11 @@
   </p>
 </footer>
 
+  <script>
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('show');
+  });
+</script>
 
 </body>
 </html>
