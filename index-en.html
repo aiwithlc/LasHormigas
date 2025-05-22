@@ -5,59 +5,165 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fundación Las Hormigas</title>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="las%20hormigas%20(1).png" />
 
-  <!-- Meta Tags -->
   <meta name="description" content="Fundación Las Hormigas transforms lives through educational experiences for children in vulnerable areas of the Dominican Republic.">
   <meta name="keywords" content="education, Dominican Republic, foundation, children, NGO, volunteering, donations">
   <meta name="author" content="Fundación Las Hormigas">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Fundación Las Hormigas">
   <meta property="og:description" content="Educational experiences that transform lives in the Dominican Republic.">
   <meta property="og:image" content="las%20hormigas%20(1).png">
-  <meta property="og:url" content="https://www.fundacionlashormigas.org">
+  <meta property="og:url" content="https://aiwithlc.github.io/LasHormigas/index-en.html">
   <meta property="og:type" content="website">
 
-  <!-- Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
 
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #fff;
-      color: #222;
+    :root {
+      --primary: #007187;
+      --accent: #EF3E3E;
+      --bg: #ffffff;
+      --text: #222222;
+    }
+
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: white;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav img {
+      height: 40px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      position: relative;
+    }
+
+    .ants {
+      position: relative;
+      width: 100%;
+      height: 30px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .ant {
+      font-size: 22px;
+      position: absolute;
+      top: 0;
+      transform: scaleX(-1);
+      animation: crawl 18s linear forwards, wiggle 1s ease-in-out infinite;
+    }
+
+    .ant:hover {
+      animation-play-state: paused;
+    }
+
+    .ant:nth-child(1) { animation-delay: 0s; top: 0px; }
+    .ant:nth-child(2) { animation-delay: 2.5s; top: 5px; }
+    .ant:nth-child(3) { animation-delay: 4.8s; top: 3px; }
+    .ant:nth-child(4) { animation-delay: 7.1s; top: 7px; }
+    .ant:nth-child(5) { animation-delay: 9.6s; top: 2px; }
+    .ant:nth-child(6) { animation-delay: 12s; top: 6px; }
+
+    @keyframes crawl {
+      0% { left: -40px; opacity: 0; }
+      10% { opacity: 1; }
+      90% { left: 100vw; opacity: 1; }
+      100% { left: 100vw; opacity: 0; }
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: scaleX(-1) translateY(0); }
+      50% { transform: scaleX(-1) translateY(-2px); }
+    }
+
+    header img {
+      width: 120px;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 600px;
+      margin: 1rem auto;
+    }
+
     section {
       max-width: 860px;
       margin: auto;
       padding: 2rem 1.5rem;
     }
+
     h2 {
       font-size: 1.5rem;
-      color: #007187;
+      color: var(--primary);
       margin-bottom: 1rem;
     }
+
     ul {
       list-style: none;
       padding-left: 0;
     }
+
     ul li {
       margin-bottom: 1rem;
       padding-left: 1.5rem;
       position: relative;
     }
+
     ul li::before {
       content: "•";
       position: absolute;
       left: 0;
-      color: #EF3E3E;
+      color: var(--accent);
       font-size: 1.3rem;
       top: 0;
     }
+
     .cta {
       background: #f5f7f8;
       border-radius: 12px;
@@ -65,10 +171,11 @@
       text-align: center;
       margin-top: 3rem;
     }
+
     .cta a {
       display: inline-block;
       margin-top: 1.5rem;
-      background: #EF3E3E;
+      background: var(--accent);
       color: white;
       text-decoration: none;
       padding: 0.9rem 1.8rem;
@@ -76,9 +183,11 @@
       font-weight: 600;
       transition: background 0.3s ease;
     }
+
     .cta a:hover {
       background: #c82d2d;
     }
+
     footer {
       text-align: center;
       padding: 3rem 2rem;
@@ -97,18 +206,26 @@
     </ul>
   </nav>
 
-  <header style="text-align: center; padding: 3rem 1.5rem;">
-    <img src="las hormigas.png" alt="Fundación Las Hormigas Logo" style="width: 120px; margin-bottom: 1rem;">
+  <header>
+    <div class="ants">
+      <div class="ant">🐜</div>
+      <div class="ant">🐜</div>
+      <div class="ant">🐜</div>
+      <div class="ant">🐜</div>
+      <div class="ant">🐜</div>
+      <div class="ant">🐜</div>
+    </div>
+    <img src="las hormigas.png" alt="Fundación Las Hormigas Logo">
     <h1>Fundación Las Hormigas</h1>
     <p>Educational experiences that transform lives in the Dominican Republic 🐜</p>
   </header>
 
-  <section id="about">
+  <section>
     <h2>Who We Are</h2>
     <p>A group of ants coming together to contribute our grain of sand and improve the educational experience of children and youth in vulnerable areas of the country.</p>
   </section>
 
-  <section id="lines">
+  <section>
     <h2>Our Focus Areas</h2>
     <ul>
       <li>Providing materials and educational resources.</li>
@@ -118,7 +235,7 @@
     </ul>
   </section>
 
-  <section class="cta" id="contact">
+  <section class="cta">
     <h2>Want to Collaborate or Learn More?</h2>
     <p>Contact us to learn how you can support our mission.</p>
     <a href="mailto:fundacionlashormigas@gmail.com">Email Us</a>
@@ -135,7 +252,7 @@
 
   <section>
     <h2>What They Say About Us</h2>
-    <blockquote style="font-style: italic; color: #555; border-left: 4px solid #007187; padding-left: 1rem;">
+    <blockquote style="font-style: italic; color: #555; border-left: 4px solid var(--primary); padding-left: 1rem;">
       "Thanks to Las Hormigas, I have the supplies I need to go to school."<br>
       <em>– María, age 9</em>
     </blockquote>
@@ -152,6 +269,11 @@
     <h2>Want to Get Involved?</h2>
     <p>We welcome hands, hearts, and talents. You can help by sharing your time, resources, or skills. Every grain counts!</p>
     <a href="mailto:fundacionlashormigas@gmail.com">Join as a Volunteer</a>
+  </section>
+
+  <section style="text-align: center; margin-top: 3rem;">
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <div class="elfsight-app-3a7741a3-ed1e-4fc0-b12e-4125250fcb36" data-elfsight-app-lazy></div>
   </section>
 
   <footer>
