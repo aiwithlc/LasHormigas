@@ -70,27 +70,34 @@
     }
 
     .ant {
-      width: 24px;
-      height: 24px;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Ant_icon.svg/512px-Ant_icon.svg.png') no-repeat center/contain;
+      font-size: 22px;
       position: absolute;
       top: 0;
-      animation: crawl 8s linear infinite;
+      transform: scaleX(-1);
+      animation: crawl 18s linear forwards, wiggle 1s ease-in-out infinite;
     }
 
-    .ant:nth-child(2) {
-      animation-delay: 1s;
+    .ant:hover {
+      animation-play-state: paused;
     }
 
-    .ant:nth-child(3) {
-      animation-delay: 2s;
-    }
+    .ant:nth-child(1) { animation-delay: 0s; top: 0px; }
+    .ant:nth-child(2) { animation-delay: 2.5s; top: 5px; }
+    .ant:nth-child(3) { animation-delay: 4.8s; top: 3px; }
+    .ant:nth-child(4) { animation-delay: 7.1s; top: 7px; }
+    .ant:nth-child(5) { animation-delay: 9.6s; top: 2px; }
+    .ant:nth-child(6) { animation-delay: 12s; top: 6px; }
 
     @keyframes crawl {
-      0% { left: -30px; opacity: 0; transform: scale(1); }
+      0% { left: -40px; opacity: 0; }
       10% { opacity: 1; }
       90% { left: 100vw; opacity: 1; }
-      100% { left: 100vw; opacity: 0; transform: scale(0.8); }
+      100% { left: 100vw; opacity: 0; }
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: scaleX(-1) translateY(0); }
+      50% { transform: scaleX(-1) translateY(-2px); }
     }
 
     header img {
@@ -189,9 +196,12 @@
 
   <header>
     <div class="ants">
-      <div class="ant"></div>
-      <div class="ant"></div>
-      <div class="ant"></div>
+      <div class="ant">🐜</div>
+      <div class="ant">🐜</div>
+      <div class="ant">🐜</div>
+      <div class="ant">🐜</div>
+      <div class="ant">🐜</div>
+      <div class="ant">🐜</div>
     </div>
     <img src="las hormigas.png" alt="Logo Fundación Las Hormigas">
     <h1>Fundación Las Hormigas</h1>
