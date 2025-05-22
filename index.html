@@ -58,7 +58,11 @@
       align-items: center;
       gap: 0.5rem;
     }
-
+   .nav-left a img {
+      margin-bottom: 0.5rem;
+      height: 40px;
+      cursor: pointer;
+      }
     nav img {
       height: 40px;
     }
@@ -264,9 +268,11 @@
   </style>
 </head>
 <body>
-  <nav>
+   <nav>
     <div class="nav-left">
-      <img src="las hormigas (1).png" alt="Las Hormigas Logo">
+      <a href="index.html">
+        <img src="las hormigas (1).png" alt="Las Hormigas Logo">
+      </a>
       <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('show')">☰</button>
     </div>
     <ul>
@@ -363,6 +369,12 @@
   <script>
   document.querySelector('.menu-toggle').addEventListener('click', function() {
     document.querySelector('nav ul').classList.toggle('show');
+  });
+     // Auto-close on link click
+  document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('show');
+    });
   });
 </script>
 
