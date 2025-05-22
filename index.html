@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fundación Las Hormigas</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <style>
+    :root {
+      --primary: #007187;
+      --accent: #EF3E3E;
+      --bg: #ffffff;
+      --text: #222222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: white;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav img {
+      height: 40px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      position: relative;
+    }
+
+    .ants {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+      gap: 1rem;
+    }
+
+    .ant {
+      width: 24px;
+      height: 24px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Ant_icon.svg/512px-Ant_icon.svg.png') no-repeat center/contain;
+      animation: crawl 6s linear infinite;
+    }
+
+    @keyframes crawl {
+      0% { transform: translateX(0) scale(1); opacity: 1; }
+      80% { transform: translateX(300px) scale(1); opacity: 1; }
+      100% { transform: translateX(300px) scale(0); opacity: 0; }
+    }
+
+    header img {
+      width: 120px;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 600px;
+      margin: 1rem auto;
+    }
+
+    section {
+      max-width: 860px;
+      margin: auto;
+      padding: 2rem 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 1.3rem;
+      top: 0;
+    }
+
+    .cta {
+      background: #f5f7f8;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 1.5rem;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      padding: 0.9rem 1.8rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .cta a:hover {
+      background: #c82d2d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <img src="fundacion_las_hormigas_logo.png" alt="Logo Las Hormigas">
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#quienes">¿Quiénes somos?</a></li>
+      <li><a href="#lineas">Líneas de acción</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <div class="ants">
+      <div class="ant"></div>
+      <div class="ant"></div>
+      <div class="ant"></div>
+    </div>
+    <img src="fundacion_las_hormigas_logo.png" alt="Logo Fundación Las Hormigas">
+    <h1>Fundación Las Hormigas</h1>
+    <p>Experiencias educativas que transforman vidas en la República Dominicana 🐜</p>
+  </header>
+
+  <section id="quienes">
+    <h2>¿Quiénes somos?</h2>
+    <p>Un grupo de hormigas que se une para aportar nuestro granito de arena y mejorar la experiencia educativa de niños y jóvenes en zonas vulnerables del país.</p>
+  </section>
+
+  <section id="lineas">
+    <h2>Líneas de acción</h2>
+    <ul>
+      <li>Aporte de materiales y recursos didácticos.</li>
+      <li>Espacios de formación para estudiantes, docentes, familias y comunidades.</li>
+      <li>Contribución de tiempo, talentos y recursos al sistema educativo público.</li>
+      <li>Conexión y canalización de iniciativas y proyectos de impacto social.</li>
+    </ul>
+  </section>
+
+  <section class="cta" id="contacto">
+    <h2>¿Quieres colaborar o saber más?</h2>
+    <p>Escríbenos para conocer cómo puedes apoyar esta causa.</p>
+    <a href="mailto:fundacionlashormigas@gmail.com">Contactar por correo</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Fundación Las Hormigas · Santo Domingo, RD
+  </footer>
+
+</body>
+</html>
