@@ -142,6 +142,12 @@
     .read-more:hover {
       text-decoration: underline;
     }
+    @media (max-width: 768px) {
+  footer {
+    padding: 2rem 1rem;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -189,7 +195,7 @@
     </article>
 
     <article class="blog-card">
-      <img src="utensils.jpg" alt="Rural schools in the DR">
+      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7" alt="Rural schools in the DR">
       <div class="blog-card-content">
         <h2>Rural Schools and Their Invisible Challenges</h2>
         <p>Infrastructure, supplies, internet access... we explore the everyday barriers faced by the most overlooked schools in the country.</p>
@@ -198,7 +204,7 @@
     </article>
 
     <article class="blog-card">
-      <img src="https://images.unsplash.com/photo-1601574464964-dfbd6e57f42b" alt="School supplies impact">
+      <img src="utensils.jpg" alt="School supplies impact">
       <div class="blog-card-content">
         <h2>One Notebook, One Opportunity</h2>
         <p>Can a pencil change a life? We reflect on the symbolic and practical value of delivering basic school supplies in vulnerable communities.</p>
@@ -206,5 +212,28 @@
       </div>
     </article>
   </section>
+
+<footer style="text-align: center; padding: 3rem 2rem; font-size: 0.9rem; color: #777; background: #F8F8F8;">
+  <a href="https://instagram.com/fundacionlashormigas" target="_blank" style="display: inline-block; margin-bottom: 1rem;">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style="width: 28px; height: 28px; filter: grayscale(0%) brightness(90%) contrast(110%); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">
+  </a>
+  <p>&copy; 2025 Fundación Las Hormigas | Santo Domingo, RD</p>
+  <p style="margin-top: 1rem; font-size: 0.8rem; color: #aaa;">
+    Sitio impulsado por <a href="https://lcacosta.com" target="_blank" style="color: #bbb0e0; text-decoration: none;">AI with LC</a>
+  </p>
+</footer>
+
+
+  <script>
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('show');
+  });
+     // Auto-close on link click
+  document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('show');
+    });
+  });
+</script>
 </body>
 </html>
