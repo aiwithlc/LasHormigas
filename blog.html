@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Fundación Las Hormigas</title>
+  <meta name="description" content="Reflexiones y aprendizajes sobre el sistema educativo dominicano, la empatía, y cómo transformar vidas a través de la educación.">
+  <meta name="keywords" content="educación, República Dominicana, blog, empatía, transformación social, Las Hormigas">
+  <meta name="author" content="Fundación Las Hormigas">
+  <meta property="og:title" content="Blog | Fundación Las Hormigas">
+  <meta property="og:description" content="Ideas y reflexiones sobre cómo sembrar conocimiento y empatía en el sistema educativo dominicano.">
+  <meta property="og:image" content="las%20hormigas%20(1).png">
+  <meta property="og:url" content="https://www.fundacionlashormigas.org/blog">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+  <style>
+    :root {
+      --primary: #007187;
+      --accent: #EF3E3E;
+      --bg: #ffffff;
+      --text: #222222;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: white;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-left a img {
+      margin-bottom: 0.5rem;
+      height: 40px;
+      cursor: pointer;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+    }
+    .blog-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 2rem auto 3rem;
+      padding: 0 1.5rem;
+    }
+    .blog-header h1 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .blog-header p {
+      font-size: 1.05rem;
+      color: #444;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+      padding: 0 1.5rem;
+    }
+    .blog-card {
+      border: 1px solid #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      transition: box-shadow 0.3s ease;
+    }
+    .blog-card:hover {
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    }
+    .blog-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .blog-card-content {
+      padding: 1.2rem;
+    }
+    .blog-card h2 {
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .blog-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .read-more {
+      display: inline-block;
+      margin-top: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .read-more:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <a href="index.html">
+        <img src="las hormigas (1).png" alt="Las Hormigas Logo">
+      </a>
+    </div>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#quienes">¿Quiénes somos?</a></li>
+      <li><a href="index.html#lineas">Líneas de acción</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+      <li><a href="index-en.html" style="font-weight: 500; font-size: 0.9rem; opacity: 0.7;">🇨🇦 EN</a></li>
+    </ul>
+  </nav>
+
+  <section class="blog-header">
+    <h1>🐜 Aprendemos Juntos</h1>
+    <p>
+      En Fundación Las Hormigas, creemos que la educación va mucho más allá de los libros.<br>
+      Este blog es un espacio para reflexionar, compartir ideas, historias y aprendizajes que iluminan las realidades del sistema educativo público en República Dominicana — y el poder que tiene la educación para cambiar vidas.<br><br>
+      Queremos visibilizar necesidades, proponer soluciones, y conectar con personas como tú: que creen que sembrar conocimiento y empatía es la base de una sociedad más justa.
+    </p>
+  </section>
+
+  <section class="blog-grid">
+    <article class="blog-card">
+      <img src="https://images.unsplash.com/photo-1588072432836-e10032774350" alt="Educación emocional en las aulas">
+      <div class="blog-card-content">
+        <h2>Educación emocional: la clave oculta del aprendizaje</h2>
+        <p>¿Qué pasa cuando enseñamos con empatía? Exploramos cómo el desarrollo emocional impacta directamente el rendimiento y bienestar de los estudiantes en RD.</p>
+        <a href="#" class="read-more">Leer más →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238" alt="Voluntariado educativo">
+      <div class="blog-card-content">
+        <h2>Voluntariado que transforma: historias reales</h2>
+        <p>Conoce a quienes han dedicado su tiempo y corazón a cambiar una vida. Testimonios que nos recuerdan que ayudar también educa.</p>
+        <a href="#" class="read-more">Leer más →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7" alt="Escuelas rurales en RD">
+      <div class="blog-card-content">
+        <h2>Las escuelas rurales y sus desafíos invisibles</h2>
+        <p>Infraestructura, materiales, conectividad... exploramos las barreras cotidianas que enfrentan los centros educativos más olvidados del país.</p>
+        <a href="#" class="read-more">Leer más →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <img src="https://images.unsplash.com/photo-1583224525072-6c24aa1bda57" alt="Material escolar y su impacto">
+      <div class="blog-card-content">
+        <h2>Un cuaderno, una oportunidad</h2>
+        <p>¿Puede un lápiz cambiar un destino? Reflexionamos sobre el valor simbólico y práctico de entregar recursos básicos en comunidades vulnerables.</p>
+        <a href="#" class="read-more">Leer más →</a>
+      </div>
+    </article>
+  </section>
+</body>
+</html>
