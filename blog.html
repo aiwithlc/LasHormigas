@@ -186,33 +186,42 @@
       margin: 0 auto 4rem;
       padding: 0 1.5rem;
     }
-    .blog-card {
-      border: 1px solid #eee;
-      border-radius: 10px;
-      overflow: hidden;
-      background: #fff;
-      transition: box-shadow 0.3s ease;
-    }
-    .blog-card:hover {
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-    }
+    
     .blog-card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
     }
-    .blog-card-content {
-      padding: 1.2rem;
-    }
-    .blog-card h2 {
-      font-size: 1.2rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-    .blog-card p {
-      font-size: 0.95rem;
-      color: #555;
-    }
+.blog-card {
+  display: block;
+  text-decoration: none;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.blog-card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  border: 2px solid var(--accent);
+}
+
+.blog-card-content {
+  padding: 1.2rem;
+}
+
+.blog-card h2 {
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.blog-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
     .read-more {
       display: inline-block;
       margin-top: 0.8rem;
@@ -314,11 +323,13 @@
 
   <section class="blog-grid">
     <article class="blog-card">
+      <a href="/blog/educacion-emocional.html" class="blog-card" aria-label="Leer entrada: Educación emocional">
       <img src="https://images.unsplash.com/photo-1588072432836-e10032774350" alt="Educación emocional en las aulas">
-      <div class="blog-card-content">
-        <h2>Educación emocional: la clave oculta del aprendizaje</h2>
-        <p>¿Qué pasa cuando enseñamos con empatía? Exploramos cómo el desarrollo emocional impacta directamente el rendimiento y bienestar de los estudiantes en RD.</p>
-        <a href="/blog/educacion-emocional.html" class="read-more">Leer más →</a>
+     <div class="blog-card-content">
+    <h2>Educación emocional: la clave oculta del aprendizaje</h2>
+    <p>¿Qué pasa cuando enseñamos con empatía? Exploramos cómo el desarrollo emocional impacta directamente el rendimiento y bienestar de los estudiantes en RD.</p>
+  </div>
+</a>
       </div>
     </article>
 
