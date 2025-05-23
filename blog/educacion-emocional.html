@@ -347,7 +347,7 @@
     <li>Haz una donación para llevar estos programas a más comunidades.</li>
   </ul>
 
-  <a class="donate-btn" href="/donar">🙏 Dona ahora</a>
+  <a class="floating-donate" href="/donar">🙏 Dona ahora</a>
 
   <p><em>Cuando enseñamos con empatía, sembramos futuro. 🌱</em></p>
 </div>
@@ -369,19 +369,6 @@
   document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', () => {
       navMenu.classList.remove('show');
-    });
-  });
-</script>
-<!-- ✅ FLOATING DONATE BUTTON -->
-<a href="#contacto" class="floating-donate">💖 Donar</a>
-
-<script>
-  document.querySelector('.menu-toggle').addEventListener('click', function () {
-    document.querySelector('nav ul').classList.toggle('show');
-  });
-  document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', () => {
-      document.querySelector('nav ul').classList.remove('show');
     });
   });
 </script>
