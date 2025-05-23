@@ -285,26 +285,35 @@ nav ul li a {
   <a class="donate-btn" href="/donar">🙏 Dona ahora</a>
 
   <p><em>Cuando enseñamos con empatía, sembramos futuro. 🌱</em></p>
-<script>
-  document.querySelector('.menu-toggle').addEventListener('click', function () {
+
+  <footer style="text-align: center; padding: 3rem 2rem; font-size: 0.9rem; color: #777; background: #F8F8F8;">
+  <a href="https://instagram.com/fundacionlashormigas" target="_blank" style="display: inline-block; margin-bottom: 1rem;">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style="width: 28px; height: 28px; filter: grayscale(0%) brightness(90%) contrast(110%); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">
+  </a>
+  <p>&copy; 2025 Fundación Las Hormigas | Santo Domingo, RD</p>
+  <p style="margin-top: 1rem; font-size: 0.8rem; color: #aaa;">
+    Sitio impulsado por <a href="https://lcacosta.com" target="_blank" style="color: #bbb0e0; text-decoration: none;">AI with LC</a>
+  </p>
+</footer>
+
+  <script>
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
     document.querySelector('nav ul').classList.toggle('show');
   });
-
+     // Auto-close on link click
   document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', () => {
-      document.querySelector('nav ul').classList.remove('show');
+      navMenu.classList.remove('show');
     });
   });
 </script>
-
-    
-   </style>
+<!-- ✅ FLOATING DONATE BUTTON -->
+<a href="#contacto" class="floating-donate">💖 Donar</a>
 
 <script>
   document.querySelector('.menu-toggle').addEventListener('click', function () {
     document.querySelector('nav ul').classList.toggle('show');
   });
-
   document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', () => {
       document.querySelector('nav ul').classList.remove('show');
