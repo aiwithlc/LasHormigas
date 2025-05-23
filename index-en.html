@@ -195,6 +195,25 @@
       color: #777;
       background: #F8F8F8;
     }
+    .floating-donate {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--accent);
+    color: white;
+    padding: 0.9rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, background 0.3s ease;
+    z-index: 999;
+  }
+  .floating-donate:hover {
+    transform: translateY(-3px);
+    background: #c82d2d;
+  }
   </style>
 </head>
 <body>
