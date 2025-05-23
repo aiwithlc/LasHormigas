@@ -1,0 +1,286 @@
+<!-- 🐜 Blog Post: Educación emocional – Fundación Las Hormigas -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Educación emocional: la clave oculta del aprendizaje | Fundación Las Hormigas</title>
+  <meta name="description" content="Descubre cómo la inteligencia emocional transforma el aprendizaje en República Dominicana. Enseñar con empatía mejora el rendimiento y bienestar de los estudiantes.">
+  <meta name="keywords" content="educación emocional, inteligencia emocional, empatía, aprendizaje, bienestar estudiantil, rendimiento escolar, República Dominicana, Las Hormigas">
+  <meta property="og:title" content="Educación emocional: la clave oculta del aprendizaje" />
+  <meta property="og:description" content="Exploramos cómo el desarrollo emocional impacta directamente el rendimiento y bienestar de los estudiantes en RD." />
+  <meta property="og:image" content="https://tusitio.org/assets/educacion-emocional.jpg" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tusitio.org/blog/educacion-emocional.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+  <style>
+    :root {
+      --primary: #007187;
+      --accent: #EF3E3E;
+      --link: #00a0b0;
+      --bg: #ffffff;
+      --text: #222222;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem;
+      max-width: 720px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 2.4rem;
+      color: var(--primary);
+    }
+    h2 {
+      color: var(--primary);
+      margin-top: 2rem;
+    }
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    .tooltip {
+      border-bottom: 1px dotted #888;
+      cursor: help;
+      text-decoration: none;
+      position: relative;
+    }
+    .tooltip::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      background: var(--text);
+      color: var(--bg);
+      padding: 4px 8px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      border-radius: 4px;
+      top: 100%;
+      left: 0;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(4px);
+      transition: opacity 0.2s ease;
+    }
+    .tooltip:hover::after {
+      opacity: 1;
+    }
+    .donate-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 2rem 0;
+      transition: transform 0.2s, background 0.3s ease;
+    }
+    .donate-btn:hover {
+      transform: scale(1.05);
+      background: #d23333;
+    }
+    blockquote {
+      border-left: 4px solid var(--accent);
+      padding-left: 1rem;
+      margin: 2rem 0;
+      color: #444;
+      font-style: italic;
+    }
+   
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+      ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+  
+  ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 1.3rem;
+      top: 0;
+    }
+  nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-left a img {
+  height: 40px;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #222222;
+  font-weight: 600;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  color: #222222;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.25rem;
+    z-index: 1001;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  nav ul.show {
+    display: flex;
+    background: white;
+    padding: 1rem 2rem;
+    border-top: 1px solid #eee;
+  }
+
+  nav img {
+    margin-bottom: 0.5rem;
+  }
+}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <a href="index.html">
+      <img src="las hormigas (1).png" alt="Las Hormigas Logo">
+    </a>
+    <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('show')">☰</button>
+  </div>
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="index.html#quienes">¿Quiénes somos?</a></li>
+    <li><a href="index.html#lineas">Líneas de acción</a></li>
+    <li><a href="index.html#contacto">Contacto</a></li>
+    <li><a href="blog-en.html" style="font-weight: 500; font-size: 0.9rem; opacity: 0.7;">🇨🇦 EN</a></li>
+  </ul>
+</nav>
+
+
+  <h1>Educación emocional: la clave oculta del aprendizaje</h1>
+
+  <p><strong>¿Qué pasa cuando enseñamos con empatía?</strong> En muchos rincones de República Dominicana, los desafíos del aprendizaje no son solo académicos, sino profundamente emocionales. En este artículo, exploramos por qué <span class="tooltip" data-tooltip="La capacidad de reconocer, comprender y gestionar nuestras emociones y las de los demás.">educar emocionalmente</span> es tan esencial como enseñar matemáticas o ciencias.</p>
+
+  <p>Según un estudio de la <a href="https://casel.org/" target="_blank" rel="noopener noreferrer">Collaborative for Academic, Social, and Emotional Learning (CASEL)</a>, los estudiantes que reciben formación en habilidades socioemocionales obtienen un rendimiento académico promedio un <strong>11% más alto</strong> que sus pares que no la reciben.</p>
+
+  <blockquote>
+    “No puedes enseñar bien si el corazón del estudiante está en guerra.”  
+    <br><small>– Rita Pierson, educadora y defensora de la enseñanza con empatía</small>
+  </blockquote>
+
+  <h2>Cómo impacta la inteligencia emocional en el aula</h2>
+
+  <p>La <span class="tooltip" data-tooltip="La capacidad de manejar relaciones interpersonales con empatía y eficacia.">inteligencia emocional</span> permite a los niños:</p>
+
+  <ul>
+    <li>Regular su comportamiento y emociones en momentos de estrés.</li>
+    <li>Concentrarse mejor en sus tareas escolares.</li>
+    <li>Establecer relaciones sanas con compañeros y docentes.</li>
+  </ul>
+
+  <p>En contextos con alta desigualdad o violencia intrafamiliar, estas habilidades no son un lujo, son un salvavidas.</p>
+
+  <h2>¿Y en República Dominicana?</h2>
+
+  <p>En comunidades como las que acompaña <strong>Fundación Las Hormigas</strong>, hemos visto de primera mano cómo programas de educación emocional han reducido conflictos, mejorado la asistencia escolar y creado entornos más seguros.</p>
+
+  <p><strong>El 58% de nuestras niñas y niños</strong> reportan sentirse más seguros y felices en la escuela después de participar en nuestros talleres de bienestar emocional.</p>
+
+  <a class="donate-btn" href="/donar">💖 Apoya la educación emocional en RD</a>
+
+  <h2>Lo que puedes hacer tú</h2>
+
+  <p>El cambio empieza con pequeñas acciones:</p>
+  <ul>
+    <li>Comparte este artículo para crear conciencia.</li>
+    <li>Habla de emociones en casa y en la escuela.</li>
+    <li>Haz una donación para llevar estos programas a más comunidades.</li>
+  </ul>
+
+  <a class="donate-btn" href="/donar">🙏 Dona ahora</a>
+
+  <p><em>Cuando enseñamos con empatía, sembramos futuro. 🌱</em></p>
+<script>
+  document.querySelector('.menu-toggle').addEventListener('click', function () {
+    document.querySelector('nav ul').classList.toggle('show');
+  });
+
+  document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('nav ul').classList.remove('show');
+    });
+  });
+</script>
+
+    
+   </style>
+
+<script>
+  document.querySelector('.menu-toggle').addEventListener('click', function () {
+    document.querySelector('nav ul').classList.toggle('show');
+  });
+
+  document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('nav ul').classList.remove('show');
+    });
+  });
+</script>
+</body>
+</html>
