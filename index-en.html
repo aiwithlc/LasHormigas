@@ -287,6 +287,18 @@
       Site powered by <a href="https://lcacosta.com" target="_blank" style="color: #bbb0e0; text-decoration: none;">AI with LC</a>
     </p>
   </footer>
+<!-- ✅ FLOATING DONATE BUTTON -->
+<a href="#contacto" class="floating-donate">💖 Donar</a>
 
+<script>
+  document.querySelector('.menu-toggle').addEventListener('click', function () {
+    document.querySelector('nav ul').classList.toggle('show');
+  });
+  document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('nav ul').classList.remove('show');
+    });
+  });
+</script>
 </body>
 </html>
