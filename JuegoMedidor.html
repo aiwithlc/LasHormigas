@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juego del Medidor de Empatía | Las Hormigas</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fefefe;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #B5338A;
+    }
+
+    .scenario {
+      background: #fff9f9;
+      padding: 1rem;
+      border: 2px solid #f4c2d7;
+      border-radius: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .scenario p {
+      font-size: 1.2rem;
+    }
+
+    .choices {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    button.choice {
+      font-size: 1.2rem;
+      padding: 0.7rem 1rem;
+      background: #f0f0f0;
+      border: 2px solid #ccc;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button.choice:hover {
+      background: #e0e0e0;
+    }
+
+    .feedback {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    .info-toggle {
+      margin-top: 3rem;
+      border-top: 2px dashed #ccc;
+      padding-top: 1.5rem;
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    details {
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧠 Juego del Medidor de Empatía</h1>
+  <p>Lee la situación de aula y elige la respuesta que muestre más empatía. ¡Pon a prueba tu intuición emocional como educador!</p>
+
+  <div class="scenario" id="scenario">
+    <p id="scenario-text">Cargando escenario...</p>
+    <div class="choices" id="choices"></div>
+    <div class="feedback" id="feedback"></div>
+  </div>
+
+  <button onclick="nextScenario()">🔁 Nuevo escenario</button>
+
+  <div class="info-toggle">
+    <details>
+      <summary>📘 Cómo usar esta herramienta</summary>
+      <p>Este juego puede usarse individualmente o en grupos pequeños durante talleres o capacitaciones. También es ideal para momentos de reflexión personal en la jornada docente.</p>
+      <ul>
+        <li>💬 Leer la situación con calma</li>
+        <li>🤔 Elegir la respuesta más empática</li>
+        <li>🧠 Discutir por qué algunas respuestas pueden ser menos útiles</li>
+        <li>🌱 Reflexionar sobre prácticas de aula compasivas</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>🌍 ¿Por qué este juego es importante?</summary>
+      <p>Muchos estudiantes enfrentan retos invisibles: hambre, violencia, miedo. Un docente empático puede marcar la diferencia. Este juego:</p>
+      <ul>
+        <li>Entrena respuestas conscientes, no reactivas</li>
+        <li>Refuerza la enseñanza socioemocional (SEL)</li>
+        <li>Promueve un enfoque educativo basado en el respeto y la comprensión</li>
+        <li>Es fácil de implementar, incluso sin recursos tecnológicos avanzados</li>
+      </ul>
+      <p>Un aula con empatía es un aula donde todos pueden aprender 💜</p>
+    </details>
+  </div>
+
+  <footer>
+    Hecho con 💛 por Fundación Las Hormigas | <a href="/">Volver al inicio</a>
+  </footer>
+
+  <script>
+    const scenarios = [
+      {
+        text: "Un niño llega tarde todos los días y parece cansado. ¿Qué haces?",
+        choices: [
+          { text: "😡 Regañarlo frente a todos para que aprenda", correct: false },
+          { text: "🙂 Hablar con él en privado y preguntarle si todo está bien en casa", correct: true },
+          { text: "🤷‍♀️ Ignorarlo, no es tu problema", correct: false }
+        ]
+      },
+      {
+        text: "Una niña rompe a llorar en medio de la clase sin explicación.",
+        choices: [
+          { text: "😒 Decirle que deje de hacer escándalo", correct: false },
+          { text: "🫂 Preguntarle si quiere salir un momento a calmarse", correct: true },
+          { text: "🙄 Pedirle a otro estudiante que se encargue", correct: false }
+        ]
+      },
+      {
+        text: "Un estudiante te contesta con mala actitud al darle una instrucción.",
+        choices: [
+          { text: "😠 Gritarle y mandarlo a la dirección", correct: false },
+          { text: "😌 Mantener la calma y preguntarle si quiere hablar después", correct: true },
+          { text: "😐 Ignorarlo por completo", correct: false }
+        ]
+      },
+      {
+        text: "Una estudiante se queda dormida durante la clase.",
+        choices: [
+          { text: "🤬 Despertarla con un grito para que aprenda", correct: false },
+          { text: "💭 Esperar al final para preguntarle si está bien y si necesita ayuda", correct: true },
+          { text: "😴 Dejarla dormir y seguir la clase como si nada", correct: false }
+        ]
+      },
+      {
+        text: "Un niño se niega a participar en una actividad grupal.",
+        choices: [
+          { text: "🗯 Forzarlo a participar para que aprenda disciplina", correct: false },
+          { text: "🤝 Preguntarle en privado si algo le incomoda y ofrecerle una alternativa", correct: true },
+          { text: "😑 Dejarlo solo y no hacer nada", correct: false }
+        ]
+      },
+      {
+        text: "Una estudiante olvida entregar la tarea varias veces.",
+        choices: [
+          { text: "📣 Llamarla la atención frente a todos", correct: false },
+          { text: "🔍 Preguntarle si tiene dificultades en casa y cómo puedes apoyarla", correct: true },
+          { text: "🚫 Quitarle puntos sin explicación", correct: false }
+        ]
+      },
+      {
+        text: "Un alumno no deja de moverse ni quedarse quieto en clase.",
+        choices: [
+          { text: "😤 Mandarlo a parar en una esquina", correct: false },
+          { text: "🧠 Considerar que pueda necesitar moverse y darle tareas que involucren movimiento", correct: true },
+          { text: "🔕 Ignorarlo hasta que se canse", correct: false }
+        ]
+      },
+      {
+        text: "Una niña se burla de otro niño por su ropa desgastada.",
+        choices: [
+          { text: "🙅‍♀️ Decirle que eso no se hace y seguir con la clase", correct: false },
+          { text: "👥 Hacer una actividad sobre empatía y diferencias", correct: true },
+          { text: "🤫 Llamarla la atención en voz baja sin más", correct: false }
+        ]
+      },
+      {
+        text: "Un estudiante con bajo rendimiento parece desconectado de la clase.",
+        choices: [
+          { text: "📉 Darle clases extra sin preguntarle qué necesita", correct: false },
+          { text: "🗣 Hablar con él para saber qué temas le interesan y cómo se siente", correct: true },
+          { text: "🕳 Dejarlo tranquilo para que no se sienta presionado", correct: false }
+        ]
+      },
+      {
+        text: "Una niña llora cuando se le pide leer en voz alta.",
+        choices: [
+          { text: "📚 Obligarla a leer igual", correct: false },
+          { text: "🧏‍♀️ Darle la opción de leer en privado o con apoyo", correct: true },
+          { text: "⏭ Saltarla sin decir nada", correct: false }
+        ]
+      }
+    ];
+
+    let usedIndices = [];
+
+    function shuffleArray(arr) {
+      return arr
+        .map(value => ({ value, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ value }) => value);
+    }
+
+    function getNextUnusedIndex() {
+      if (usedIndices.length === scenarios.length) usedIndices = [];
+      let idx;
+      do {
+        idx = Math.floor(Math.random() * scenarios.length);
+      } while (usedIndices.includes(idx));
+      usedIndices.push(idx);
+      return idx;
+    }
+
+    function loadScenario() {
+      const s = scenarios[getNextUnusedIndex()];
+      document.getElementById("scenario-text").textContent = s.text;
+      document.getElementById("feedback").textContent = "";
+
+      const shuffledChoices = shuffleArray(s.choices);
+      const choicesContainer = document.getElementById("choices");
+      choicesContainer.innerHTML = "";
+
+      shuffledChoices.forEach(c => {
+        const btn = document.createElement("button");
+        btn.className = "choice";
+        btn.textContent = c.text;
+        btn.onclick = () => {
+          document.getElementById("feedback").textContent =
+            c.correct ? "✅ ¡Buena elección! Eso demuestra empatía." : "❌ No es la mejor respuesta. Piensa en lo que ese estudiante puede estar sintiendo.";
+        };
+        choicesContainer.appendChild(btn);
+      });
+    }
+
+    function nextScenario() {
+      loadScenario();
+    }
+
+    window.onload = loadScenario;
+  </script>
+</body>
+</html>
