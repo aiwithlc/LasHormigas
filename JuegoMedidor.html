@@ -5,24 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Juego del Medidor de Empatía | Las Hormigas</title>
   <style>
+    :root {
+      --primary: #007187;
+      --accent: #EF3E3E;
+      --bg: #ffffff;
+      --text: #222222;
+    }
+
     body {
       font-family: sans-serif;
-      background: #fefefe;
+      background: var(--bg);
       margin: 0;
       padding: 2rem;
       line-height: 1.6;
-      color: #333;
+      color: var(--text);
     }
 
     h1 {
       font-size: 2rem;
-      color: #B5338A;
+      color: var(--primary);
     }
 
     .scenario {
-      background: #fff9f9;
+      background: #f5fafa;
       padding: 1rem;
-      border: 2px solid #f4c2d7;
+      border: 2px solid #d6eef2;
+      border-left: 8px solid var(--primary);
       border-radius: 1rem;
       margin-bottom: 1.5rem;
     }
@@ -125,95 +133,24 @@
 
   <script>
     const scenarios = [
-      {
-        text: "Un niño llega tarde todos los días y parece cansado. ¿Qué haces?",
-        choices: [
-          { text: "😡 Regañarlo frente a todos para que aprenda", correct: false },
-          { text: "🙂 Hablar con él en privado y preguntarle si todo está bien en casa", correct: true },
-          { text: "🤷‍♀️ Ignorarlo, no es tu problema", correct: false }
-        ]
-      },
-      {
-        text: "Una niña rompe a llorar en medio de la clase sin explicación.",
-        choices: [
-          { text: "😒 Decirle que deje de hacer escándalo", correct: false },
-          { text: "🫂 Preguntarle si quiere salir un momento a calmarse", correct: true },
-          { text: "🙄 Pedirle a otro estudiante que se encargue", correct: false }
-        ]
-      },
-      {
-        text: "Un estudiante te contesta con mala actitud al darle una instrucción.",
-        choices: [
-          { text: "😠 Gritarle y mandarlo a la dirección", correct: false },
-          { text: "😌 Mantener la calma y preguntarle si quiere hablar después", correct: true },
-          { text: "😐 Ignorarlo por completo", correct: false }
-        ]
-      },
-      {
-        text: "Una estudiante se queda dormida durante la clase.",
-        choices: [
-          { text: "🤬 Despertarla con un grito para que aprenda", correct: false },
-          { text: "💭 Esperar al final para preguntarle si está bien y si necesita ayuda", correct: true },
-          { text: "😴 Dejarla dormir y seguir la clase como si nada", correct: false }
-        ]
-      },
-      {
-        text: "Un niño se niega a participar en una actividad grupal.",
-        choices: [
-          { text: "🗯 Forzarlo a participar para que aprenda disciplina", correct: false },
-          { text: "🤝 Preguntarle en privado si algo le incomoda y ofrecerle una alternativa", correct: true },
-          { text: "😑 Dejarlo solo y no hacer nada", correct: false }
-        ]
-      },
-      {
-        text: "Una estudiante olvida entregar la tarea varias veces.",
-        choices: [
-          { text: "📣 Llamarla la atención frente a todos", correct: false },
-          { text: "🔍 Preguntarle si tiene dificultades en casa y cómo puedes apoyarla", correct: true },
-          { text: "🚫 Quitarle puntos sin explicación", correct: false }
-        ]
-      },
-      {
-        text: "Un alumno no deja de moverse ni quedarse quieto en clase.",
-        choices: [
-          { text: "😤 Mandarlo a parar en una esquina", correct: false },
-          { text: "🧠 Considerar que pueda necesitar moverse y darle tareas que involucren movimiento", correct: true },
-          { text: "🔕 Ignorarlo hasta que se canse", correct: false }
-        ]
-      },
-      {
-        text: "Una niña se burla de otro niño por su ropa desgastada.",
-        choices: [
-          { text: "🙅‍♀️ Decirle que eso no se hace y seguir con la clase", correct: false },
-          { text: "👥 Hacer una actividad sobre empatía y diferencias", correct: true },
-          { text: "🤫 Llamarla la atención en voz baja sin más", correct: false }
-        ]
-      },
-      {
-        text: "Un estudiante con bajo rendimiento parece desconectado de la clase.",
-        choices: [
-          { text: "📉 Darle clases extra sin preguntarle qué necesita", correct: false },
-          { text: "🗣 Hablar con él para saber qué temas le interesan y cómo se siente", correct: true },
-          { text: "🕳 Dejarlo tranquilo para que no se sienta presionado", correct: false }
-        ]
-      },
-      {
-        text: "Una niña llora cuando se le pide leer en voz alta.",
-        choices: [
-          { text: "📚 Obligarla a leer igual", correct: false },
-          { text: "🧏‍♀️ Darle la opción de leer en privado o con apoyo", correct: true },
-          { text: "⏭ Saltarla sin decir nada", correct: false }
-        ]
-      }
+      { text: "Un niño llega tarde todos los días y parece cansado. ¿Qué haces?", choices: [ { text: "😡 Regañarlo frente a todos para que aprenda", correct: false }, { text: "🙂 Hablar con él en privado y preguntarle si todo está bien en casa", correct: true }, { text: "🤷‍♀️ Ignorarlo, no es tu problema", correct: false } ] },
+      { text: "Una niña rompe a llorar en medio de la clase sin explicación.", choices: [ { text: "😒 Decirle que deje de hacer escándalo", correct: false }, { text: "🫂 Preguntarle si quiere salir un momento a calmarse", correct: true }, { text: "🙄 Pedirle a otro estudiante que se encargue", correct: false } ] },
+      { text: "Un estudiante te contesta con mala actitud al darle una instrucción.", choices: [ { text: "😠 Gritarle y mandarlo a la dirección", correct: false }, { text: "😌 Mantener la calma y preguntarle si quiere hablar después", correct: true }, { text: "😐 Ignorarlo por completo", correct: false } ] },
+      { text: "Una estudiante se queda dormida durante la clase.", choices: [ { text: "🤬 Despertarla con un grito para que aprenda", correct: false }, { text: "💭 Esperar al final para preguntarle si está bien y si necesita ayuda", correct: true }, { text: "😴 Dejarla dormir y seguir la clase como si nada", correct: false } ] },
+      { text: "Un niño se niega a participar en una actividad grupal.", choices: [ { text: "🗯 Forzarlo a participar para que aprenda disciplina", correct: false }, { text: "🤝 Preguntarle en privado si algo le incomoda y ofrecerle una alternativa", correct: true }, { text: "😑 Dejarlo solo y no hacer nada", correct: false } ] },
+      { text: "Una estudiante olvida entregar la tarea varias veces.", choices: [ { text: "📣 Llamarla la atención frente a todos", correct: false }, { text: "🔍 Preguntarle si tiene dificultades en casa y cómo puedes apoyarla", correct: true }, { text: "🚫 Quitarle puntos sin explicación", correct: false } ] },
+      { text: "Un alumno no deja de moverse ni quedarse quieto en clase.", choices: [ { text: "😤 Mandarlo a parar en una esquina", correct: false }, { text: "🧠 Considerar que pueda necesitar moverse y darle tareas que involucren movimiento", correct: true }, { text: "🔕 Ignorarlo hasta que se canse", correct: false } ] },
+      { text: "Una niña se burla de otro niño por su ropa desgastada.", choices: [ { text: "🙅‍♀️ Decirle que eso no se hace y seguir con la clase", correct: false }, { text: "👥 Hacer una actividad sobre empatía y diferencias", correct: true }, { text: "🤫 Llamarla la atención en voz baja sin más", correct: false } ] },
+      { text: "Un estudiante con bajo rendimiento parece desconectado de la clase.", choices: [ { text: "📉 Darle clases extra sin preguntarle qué necesita", correct: false }, { text: "🗣 Hablar con él para saber qué temas le interesan y cómo se siente", correct: true }, { text: "🕳 Dejarlo tranquilo para que no se sienta presionado", correct: false } ] },
+      { text: "Una niña llora cuando se le pide leer en voz alta.", choices: [ { text: "📚 Obligarla a leer igual", correct: false }, { text: "🧏‍♀️ Darle la opción de leer en privado o con apoyo", correct: true }, { text: "⏭ Saltarla sin decir nada", correct: false } ] }
     ];
 
     let usedIndices = [];
 
     function shuffleArray(arr) {
-      return arr
-        .map(value => ({ value, sort: Math.random() }))
-        .sort((a, b) => a.sort - b.sort)
-        .map(({ value }) => value);
+      return arr.map(value => ({ value, sort: Math.random() }))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({ value }) => value);
     }
 
     function getNextUnusedIndex() {
