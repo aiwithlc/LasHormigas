@@ -90,6 +90,15 @@
   </style>
 </head>
 <body>
+<div id="site-header"></div>
+
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("site-header").innerHTML = html;
+    });
+</script>
 
   <h1>🧠 Juego del Medidor de Empatía</h1>
   <p>Lee la situación de aula y elige la respuesta que muestre más empatía. ¡Pon a prueba tu intuición emocional como educador!</p>
