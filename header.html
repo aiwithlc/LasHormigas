@@ -1,4 +1,3 @@
-<link rel="icon" type="image/png" href="las%20hormigas%20(1).png" />
 <style>
   :root {
     --primary: #007187;
@@ -7,32 +6,32 @@
     --text: #222222;
   }
 
-   ul {
-      list-style: none;
-      padding-left: 0;
-    }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
 
-    ul li {
-      margin-bottom: 1rem;
-      padding-left: 1.5rem;
-      position: relative;
-    }
+  ul li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
 
-    ul li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-size: 1.3rem;
-      top: 0;
-    }
+  ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 1.3rem;
+    top: 0;
+  }
 
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background: white;
+    padding: 0.75rem 1.25rem;
+    background: var(--bg);
     border-bottom: 1px solid #eee;
     position: sticky;
     top: 0;
@@ -42,11 +41,36 @@
   .nav-left {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 
-  .nav-left a img {
-    height: 40px;
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .nav-left img {
+    height: 44px;
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  .brand-text h1 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: var(--primary);
+    font-weight: 700;
+  }
+
+  .brand-text p {
+    font-size: 0.8rem;
+    margin: 0;
+    color: #555;
   }
 
   .menu-toggle {
@@ -61,7 +85,9 @@
   nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
   }
 
   nav ul li a {
@@ -72,15 +98,14 @@
 
   .ants {
     width: 100%;
-    height: 30px;
+    height: 28px;
     overflow: hidden;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
     position: relative;
+    margin: 0.5rem 0 0.25rem;
   }
 
   .ant {
-    font-size: 22px;
+    font-size: 20px;
     position: absolute;
     top: 0;
     transform: scaleX(-1);
@@ -110,31 +135,6 @@
     50% { transform: scaleX(-1) translateY(-2px); }
   }
 
-  .brand-bar {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 0 2rem 1rem;
-  }
-
-  .brand-text {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .brand-text h1 {
-    margin: 0;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--primary);
-  }
-
-  .brand-text p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: #555;
-  }
-
   @media (max-width: 768px) {
     .menu-toggle {
       display: block;
@@ -155,37 +155,23 @@
     nav ul.show {
       display: flex;
       background: white;
-      padding: 1rem 2rem;
+      padding: 1rem 1.25rem;
       border-top: 1px solid #eee;
-    }
-
-    .brand-bar {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 1rem 2rem;
-    }
-
-    .brand-text h1 {
-      font-size: 1.2rem;
-    }
-
-    .brand-text p {
-      font-size: 0.85rem;
     }
   }
 </style>
 
 <nav>
   <div class="nav-left">
-  <div class="brand-bar">
-  <a href="index.html">
-    <img src="las hormigas (1).png" alt="Logo Las Hormigas" style="height: 50px;" />
-  </a>
-  <div class="brand-text">
-    <h1>Fundación Las Hormigas</h1>
-    <p>Educación que transforma vidas 🐜</p>
-  </div>
-</div>
+    <div class="nav-brand">
+      <a href="index.html">
+        <img src="las hormigas (1).png" alt="Logo Las Hormigas" />
+      </a>
+      <div class="brand-text">
+        <h1>Fundación Las Hormigas</h1>
+        <p>Educación que transforma vidas 🐜</p>
+      </div>
+    </div>
     <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('show')">☰</button>
   </div>
   <ul>
@@ -197,7 +183,7 @@
   </ul>
 </nav>
 
-<div class="ants">
+<div class="ants" aria-hidden="true">
   <div class="ant">🐜</div>
   <div class="ant">🐜</div>
   <div class="ant">🐜</div>
@@ -205,7 +191,6 @@
   <div class="ant">🐜</div>
   <div class="ant">🐜</div>
 </div>
-
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
